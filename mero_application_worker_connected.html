@@ -1,0 +1,91 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>mero｜体験配信のお申し込み</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',sans-serif;color:#344b55;background:#eef8f9}*{box-sizing:border-box}body{margin:0}main{max-width:560px;margin:auto;padding:30px 16px 60px}.logo{text-align:center;font-size:42px;letter-spacing:.14em;font-weight:300;color:#4a9eac}.panel{background:#fff;border-radius:24px;padding:23px;box-shadow:0 12px 40px #a9cdd033}h1{font-size:22px;text-align:center}h2{font-size:18px;margin-top:26px}p{line-height:1.7}.small{font-size:12px;color:#697d83}.field{margin:17px 0}label{display:block;font-size:14px;font-weight:600;margin-bottom:7px}input,select,textarea{width:100%;font-size:16px;padding:13px;border:1px solid #c9dfe2;border-radius:11px;background:#fff}textarea{min-height:75px}.choices{display:grid;gap:9px}.choice{display:flex;gap:10px;align-items:flex-start;padding:14px;border:1px solid #c9dfe2;border-radius:12px;cursor:pointer}.choice input{width:auto;margin-top:3px;accent-color:#369baa}.choice span{font-size:14px}.choice strong{display:block;margin-bottom:3px}.choice small{display:block;color:#667d83}.hint{padding:12px;border-radius:12px;background:#eff9fa;font-size:13px}.submit{width:100%;border:0;border-radius:14px;background:#318e9e;color:#fff;padding:16px;font-size:17px;font-weight:700;margin-top:20px}.submit:disabled{opacity:.5}.required{color:#d36d7e}#visit{display:none}.footer{text-align:center;margin-top:18px}#status{white-space:pre-wrap;overflow-wrap:anywhere}.success{text-align:center;padding:48px 10px}.success .tick{font-size:56px;color:#318e9e}.hidden{display:none}#auth{padding:12px;background:#eff9fa;border-radius:12px;margin-bottom:18px;font-size:13px}a{color:#338e9d}
+</style></head><body><main><div class="logo">mero</div><div class="panel">
+<div id="auth" role="status" aria-live="polite">LINEログインを確認しています…</div>
+<section id="formScreen" class="hidden"><h1>体験配信のお申し込み</h1><p class="small">必要事項をご入力ください。確認後、担当者よりご連絡いたします。</p>
+<form id="application">
+<div class="field"><label>お名前（本名） <span class="required">*</span></label><input name="legal_name" required autocomplete="name" maxlength="80"></div>
+<div class="field"><label>源氏名（任意）</label><input name="stage_name" placeholder="まだ決まっていなければ空欄でOK" maxlength="40"></div>
+<div class="field"><label>生年月日 <span class="required">*</span></label><input name="birthday" type="date" required></div>
+<div class="field"><label>お住まいの都道府県 <span class="required">*</span></label><select name="prefecture" id="prefecture" required><option value="">選択してください</option></select></div>
+<div class="field"><label>希望する働き方 <span class="required">*</span></label><div class="choices"><label class="choice"><input type="radio" name="location" value="在宅" required><span>🏠 在宅</span></label><label class="choice"><input type="radio" name="location" value="東日本橋店"><span>🏢 東日本橋店</span></label><label class="choice"><input type="radio" name="location" value="日立店"><span>🌊 日立店</span></label></div></div>
+<div id="visit" class="field"><label>体験希望日（店舗希望者）</label><input type="date" name="visit_date"></div>
+<div class="field"><label>希望する配信カテゴリー <span class="required">*</span></label><select name="category" required><option value="">選択してください</option><option>ノンアダルト</option><option>アダルト</option><option>人妻</option><option>相談して決めたい</option></select><p class="small">カテゴリーは審査前にmeroが確認します。迷ったら「相談して決めたい」を選んでください。</p></div>
+<div class="field"><label>配信経験 <span class="required">*</span></label><select name="experience" required><option value="">選択してください</option><option>未経験</option><option>経験あり</option></select></div>
+<div class="field"><label>使用端末 <span class="required">*</span></label><select name="device" required><option value="">選択してください</option><option>スマホ</option><option>パソコン</option><option>未定</option></select></div>
+<h2>サポートコース</h2><p class="small">どのコースも報酬率30%。途中変更も相談できます。</p>
+<div class="choices"><label class="choice"><input type="radio" name="support" value="セルフスタイル" required><span><strong>🌷 セルフスタイル</strong><small>マニュアルを見て自分のペースで。困ったときはいつでも相談。</small></span></label><label class="choice"><input type="radio" name="support" value="完全マンツーマンサポート"><span><strong>💎 完全マンツーマンサポート</strong><small>担当者が一人ひとりに合わせてサポート。電話でも相談できます。</small></span></label><label class="choice"><input type="radio" name="support" value="体験後に決める"><span><strong>🫧 体験後に決める</strong><small>まずは体験してから選びたい方。</small></span></label></div>
+<div class="field"><label>質問・相談（任意）</label><textarea name="questions" maxlength="1000"></textarea></div>
+<h2>本人確認写真</h2><p class="small">本人確認・年齢確認のために使用します。登録先が認める身分証をご用意ください。</p>
+<p class="small"><a href="https://sekijimayuta-wq.github.io/mero-guide/mero_id_photo_sample.pdf" target="_blank" rel="noopener noreferrer">📄 写真付き身分証の提出方法（PDF見本）</a></p>
+<div class="field"><label>顔写真付き身分証（表面） <span class="required">*</span></label><input type="file" name="id_front" accept="image/*,.heic,.heif" required></div>
+<div class="field"><label>身分証を顔の横に持った本人写真 <span class="required">*</span></label><input type="file" name="id_selfie" accept="image/*,.heic,.heif" required></div>
+<p class="hint">マイナンバーカードの裏面（個人番号）は提出しないでください。氏名・生年月日・顔写真が鮮明に読める写真をご用意ください。</p>
+<h2>個人情報の取扱い</h2><p class="small">運営者：mero。利用目的：応募受付、本人確認・年齢確認、配信登録手続き。提出情報は登録手続きに必要な期間のみ保管し、法令等で保存が必要な場合を除き手続き完了後速やかに削除します。お問い合わせ：mero公式LINE。</p>
+<label class="choice"><input type="checkbox" name="consent" required><span>個人情報の取扱いについて確認しました。</span></label>
+<button type="submit" class="submit" id="send" disabled>申し込む</button><p id="status" class="small" role="status" aria-live="polite"></p>
+</form></section>
+<section id="successScreen" class="success hidden"><div class="tick">✓</div><h1>お申し込みが完了しました！</h1><p>お申し込みありがとうございます。</p><p id="lineResult">内容を確認後、担当者よりご連絡いたします。</p><a href="https://lin.ee/ZZyvG90" target="_top" style="display:block;margin-top:28px;padding:17px;background:#06C755;color:white;text-align:center;text-decoration:none;border-radius:14px;font-weight:bold">公式LINEに戻る</a></section>
+</div><p class="footer small">mero · 体験配信お申し込み</p></main>
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script><script>
+'use strict';
+const LIFF_ID='2012159345-32W4mglJ'; // テスト用。正式公開時は本番LIFF IDへ変更。
+const API_BASE='https://mero-intake-api.sekijimayuta.workers.dev'; // Cloudflare Workersの公開URL。末尾の / は不要。
+const prefs='北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 福岡県 佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県'.split(' ');
+const select=document.getElementById('prefecture');for(const p of prefs){const o=document.createElement('option');o.value=o.textContent=p;select.append(o);}
+const visit=document.getElementById('visit'),visitInput=document.querySelector('input[name="visit_date"]');
+for(const x of document.querySelectorAll('input[name="location"]'))x.addEventListener('change',()=>{const selected=document.querySelector('input[name="location"]:checked');const show=!!selected&&selected.value!=='在宅';visit.style.display=show?'block':'none';visitInput.required=show;});
+const auth=document.getElementById('auth'),formScreen=document.getElementById('formScreen'),status=document.getElementById('status'),send=document.getElementById('send');
+const ready=typeof API_BASE==='string'&&API_BASE.startsWith('https://')&&!API_BASE.includes('__');
+async function initialize(){
+ try{
+   if(!window.liff)throw new Error('LINE認証ライブラリを読み込めませんでした');
+   await liff.init({liffId:LIFF_ID});
+   if(!liff.isLoggedIn()){liff.login({redirectUri:location.origin+location.pathname});return;}
+   const token=liff.getIDToken();if(!token)throw new Error('LINEログインを確認できませんでした');
+   if(!ready){throw new Error('Cloudflare Workerの送信先URLが未設定です');}
+   const r=await fetch(API_BASE+'/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lineIdToken:token})});
+   const result=await r.json();if(!r.ok||!result.ok)throw new Error(result.error||'認証できませんでした');
+   auth.textContent='LINEとの連携を確認できました 🌿';formScreen.classList.remove('hidden');send.disabled=false;
+ }catch(err){auth.textContent='LINE認証を確認できませんでした。LINEから開き直してください。'+(err?.message?'（'+err.message+'）':'');}
+}
+async function readFile(file){
+ if(!file)throw new Error('本人確認写真を2枚選択してください');
+ const url=URL.createObjectURL(file);let img;
+ try{img=await new Promise((resolve,reject)=>{const i=new Image();i.onload=()=>resolve(i);i.onerror=()=>reject(new Error('写真を読み込めません。別の写真を選んでください'));i.src=url;});}
+ finally{URL.revokeObjectURL(url);}
+ if(!img.naturalWidth||!img.naturalHeight)throw new Error('写真を読み込めませんでした');
+ let maxSide=2200,quality=.86,result;
+ for(let i=0;i<4;i++){
+   const scale=Math.min(1,maxSide/Math.max(img.naturalWidth,img.naturalHeight));
+   const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.naturalWidth*scale));canvas.height=Math.max(1,Math.round(img.naturalHeight*scale));
+   const ctx=canvas.getContext('2d');if(!ctx)throw new Error('写真を変換できませんでした');
+   ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);
+   result=canvas.toDataURL('image/jpeg',quality).split(',')[1];
+   if(result&&result.length<3*1024*1024*4/3)return {base64:result};
+   maxSide=Math.floor(maxSide*.85);quality-=.04;
+ }
+ throw new Error('写真の容量が大きすぎます。別の写真を選んでください');
+}
+let submitting=false;
+document.getElementById('application').addEventListener('submit',async event=>{
+ event.preventDefault();if(submitting)return;const f=event.currentTarget;if(!f.reportValidity())return;
+ submitting=true;send.disabled=true;status.textContent='写真を準備しています。画面を閉じずにお待ちください…';
+ try{
+   const data=Object.fromEntries(new FormData(f).entries());
+   data.id_front=await readFile(f.elements.id_front.files[0]);
+   data.id_selfie=await readFile(f.elements.id_selfie.files[0]);
+   data.consent=f.elements.consent.checked;
+   if(!window.liff||!liff.isLoggedIn()||!liff.getIDToken())throw new Error('LINEログインを確認できませんでした');
+   status.textContent='申し込みを送信しています。このままお待ちください…';
+   const resp=await fetch(API_BASE+'/submit',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({lineIdToken:liff.getIDToken(),data})});
+   const result=await resp.json();
+   if(!resp.ok||!result.ok)throw new Error(result.error||'受付が完了していません');
+   formScreen.classList.add('hidden');document.getElementById('successScreen').classList.remove('hidden');
+   if(!result.lineSent)document.getElementById('lineResult').textContent='申し込みを受け付けました。LINE自動案内を確認できなかったため、mero公式LINEへお問い合わせください。';
+   window.scrollTo({top:0,behavior:'smooth'});
+ }catch(err){status.textContent='送信を確認できませんでした。重複申込を避けるため、再送する前にmero公式LINEへお問い合わせください。'+(err?.message?'（'+err.message+'）':'');send.disabled=false;submitting=false;}
+});
+initialize();
+</script></body></html>
